@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.DetailPage"
+             xmlns:viewmodel="clr-namespace:MauiApp2.ViewModel"
+             x:DataType="viewmodel:DetailViewModel"
+             Title="DetailPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="2" BackgroundColor="PapayaWhip">
+        <Image Grid.ColumnSpan="1"  
+             Source="my_note1.png"  
+             BackgroundColor="MediumPurple"
+               HeightRequest="200"/>
+        <Label 
+            Text="{Binding Text}"
+            FontSize="40"
+            Scale="1"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontAttributes="Bold" Padding="50"
+            />
+            <Button Text="Edit" Grid.Row="1" Margin="1" Command="{Binding EditCommand}" BackgroundColor="MediumPurple"/>
+            <Button Text="Go Back"
+               Grid.Row="1" Command="{Binding GoBackCommand}" BackgroundColor="MediumPurple"
+                Margin="1"
+                HorizontalOptions="Fill"/>
+           
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
